@@ -10,7 +10,8 @@
   "scripts": {
     "census": "node ./bin/mcp-census.mjs",
     "test": "node --test test/*.test.mjs",
-    "demo": "node ./bin/mcp-census.mjs --config fixtures/configs/cursor-mcp.json --tools-dir fixtures/tools --json"
+    "demo": "node ./bin/mcp-census.mjs --config fixtures/configs/cursor-mcp.json --tools-dir fixtures/tools",
+    "demo:live": "node ./bin/mcp-census.mjs --live --allow-server notes-live --config fixtures/configs/live-notes.json"
   },
   "engines": {
     "node": ">=20"

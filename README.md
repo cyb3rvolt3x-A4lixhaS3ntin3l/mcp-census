@@ -2,7 +2,7 @@
 
 > **GRADE ≠ GATE** — Inventory your local MCP fleet. A high grade is not a runtime gate.
 
-`mcp-census` is a free CLI that practitioners can run in minutes:
+`mcp-census` (v0.1) is a free CLI that practitioners can run in minutes:
 
 1. **Discover** MCP servers from Cursor / Claude Desktop / Continue / `mcp.json`
 2. **Fingerprint** tool definitions (SHA-256 via `@sentinelreign/guard-core`)
@@ -82,9 +82,18 @@ Grades come from [`@sentinelreign/guard-core`](https://www.npmjs.com/package/@se
 | `--baseline <path>` | Declare a baseline file (affects gate-gap section) |
 | `--write-baseline <path>` | Freeze hashes for the first graded server (helper) |
 
-### Live `tools/list` (roadmap note)
+### Live `tools/list` (v0.1, opt-in)
 
-v0 grades from `--tools-dir` fixtures or inventory-only discovery. A follow-up will add opt-in local stdio handshake (`tools/list`) for servers you explicitly allow — still no remote exploit path.
+Grade real local stdio servers you explicitly allow — no remote HTTP/SSE spawn path:
+
+```bash
+mcp-census --live --allow-server notes-live \
+  --config fixtures/configs/live-notes.json
+```
+
+- Requires `--allow-server <name>` (repeatable). Wildcards are rejected.
+- Only servers with a local `command` (stdio) are eligible.
+- Fixtures via `--tools-dir` still work and take precedence when present.
 
 ## Tests
 

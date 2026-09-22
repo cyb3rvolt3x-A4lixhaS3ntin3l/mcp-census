@@ -1,0 +1,29 @@
+Script started on 2026-09-22 15:39:45+05:30 [COMMAND="npm run census -- --config fixtures/configs/cursor-mcp.json --tools-dir fixtures/tools; true" <not executed on terminal>]
+
+> mcp-census@0.1.0 census
+> node ./bin/mcp-census.mjs --config fixtures/configs/cursor-mcp.json --tools-dir fixtures/tools
+
+mcp-census — MCP fleet inventory
+thesis : GRADE ≠ GATE
+
+source : fixtures/configs/cursor-mcp.json (cursor)
+  server : notes  transport=stdio
+           cmd=node ./fake-notes-server.mjs
+  server : weather  transport=stdio
+           cmd=npx -y fake-weather-mcp
+
+grades
+  notes                    A+ (100)  decision=allow  tools=2
+  weather                  C (60)  decision=block  tools=1
+    - L1.TOOL_POISONING [critical] Instruction payload embedded in a tool description
+
+gate gap
+  You have inventory visibility (or none) without a runtime gate.
+  - [high] NO_BASELINE: No tool-definition baseline on disk. A grade alone will not catch post-approve rugs.
+  - [critical] NO_RUNTIME_GATE: No runtime gate detected in this census. Inventory grade ≠ enforcement. See sentinelagent-guard.
+  - [medium] LOW_GRADE_SERVERS: 1 server(s) scored below A (85): weather C/60
+
+production gate: https://github.com/cyb3rvolt3x-A4lixhaS3ntin3l/sentinelagent-guard
+demo: https://github.com/cyb3rvolt3x-A4lixhaS3ntin3l/mcp-grade-neq-gate
+
+Script done on 2026-09-22 15:39:46+05:30 [COMMAND_EXIT_CODE="0"]
