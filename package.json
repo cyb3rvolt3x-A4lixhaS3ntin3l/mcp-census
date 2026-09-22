@@ -1,0 +1,34 @@
+{
+  "name": "mcp-census",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Inventory local MCP servers, fingerprint tools, grade definitions, and report runtime gate gaps. GRADE ≠ GATE.",
+  "type": "module",
+  "bin": {
+    "mcp-census": "./bin/mcp-census.mjs"
+  },
+  "scripts": {
+    "census": "node ./bin/mcp-census.mjs",
+    "test": "node --test test/*.test.mjs",
+    "demo": "node ./bin/mcp-census.mjs --config fixtures/configs/cursor-mcp.json --tools-dir fixtures/tools --json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@sentinelreign/guard-core": "^2.0.1"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyb3rvolt3x-A4lixhaS3ntin3l/mcp-census.git"
+  },
+  "keywords": [
+    "mcp",
+    "ai-security",
+    "model-context-protocol",
+    "inventory",
+    "grade-neq-gate",
+    "sentinelreign"
+  ]
+}

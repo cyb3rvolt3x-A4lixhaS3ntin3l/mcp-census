@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "notes": {
+      "command": "node",
+      "args": ["./fake-notes-server.mjs"]
+    },
+    "weather": {
+      "command": "npx",
+      "args": ["-y", "fake-weather-mcp"]
+    }
+  }
+}
