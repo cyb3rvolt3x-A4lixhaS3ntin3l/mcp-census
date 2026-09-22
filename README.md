@@ -15,6 +15,11 @@ No cloud account. No remote exploits. Defensive inventory only.
 | --- | --- |
 | [mcp-grade-neq-gate](https://github.com/cyb3rvolt3x-A4lixhaS3ntin3l/mcp-grade-neq-gate) | [sentinelagent-guard](https://github.com/cyb3rvolt3x-A4lixhaS3ntin3l/sentinelagent-guard) |
 
+
+## Demo
+
+![mcp-census demo](docs/assets/demo.gif)
+
 ## Install (minutes)
 
 ```bash
